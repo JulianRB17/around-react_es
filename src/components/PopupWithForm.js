@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PopupWithForms(props) {
+export default function PopupWithForm(props) {
   const { title, inputs, submitText, isOpen, onClose } = props;
 
   const popupOpenClass = isOpen ? " popup_opened" : "";

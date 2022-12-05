@@ -1,7 +1,7 @@
 import React from "react";
 import { api } from "../utils/api.js";
 import Card from "./Card";
-import PopupWithForms from "./PopupWithForms";
+import PopupWithForm from "./PopupWithForm";
 import ImagePopup from "./ImagePopup";
 
 export default function Main(props) {
@@ -58,7 +58,7 @@ export default function Main(props) {
 
   return (
     <>
-      <PopupWithForms
+      <PopupWithForm
         title="Cambiar foto de perfil"
         submitText="Guardar"
         isOpen={popupAvatar}
@@ -72,7 +72,7 @@ export default function Main(props) {
           },
         ]}
       />
-      <PopupWithForms
+      <PopupWithForm
         title="Editar Perfil"
         submitText="Guardar"
         isOpen={popupProfile}
@@ -96,7 +96,7 @@ export default function Main(props) {
           },
         ]}
       />
-      <PopupWithForms
+      <PopupWithForm
         title="Nuevo lugar"
         submitText="Guardar"
         isOpen={popupAddNewPlace}
@@ -119,7 +119,7 @@ export default function Main(props) {
         ]}
       />
 
-      <PopupWithForms
+      <PopupWithForm
         title="¿Estás seguro?"
         submitText="Sí"
         isOpen={popupEraseCard}

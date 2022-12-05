@@ -1,8 +1,8 @@
 import React from "react";
 import { api } from "../utils/api.js";
-import Card from "./Card.jsx";
+import Card from "./Card";
 import PopupWithForms from "./PopupWithForms";
-import PopupWithImage from "./PopupWithImage";
+import ImagePopup from "./ImagePopup";
 
 export default function Main(props) {
   const {
@@ -127,11 +127,7 @@ export default function Main(props) {
         inputs={[]}
       />
 
-      <PopupWithImage
-        isOpen={popupPic}
-        onClose={onClose}
-        imagePopup={imagePopup}
-      />
+      <ImagePopup isOpen={popupPic} onClose={onClose} imagePopup={imagePopup} />
 
       <section className="profile">
         <div

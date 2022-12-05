@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PopupWithImage(props) {
+export default function ImagePopup(props) {
   const { isOpen, onClose, imagePopup } = props;
   const popupClasses = isOpen ? "popup popup_opened" : "popup";
 

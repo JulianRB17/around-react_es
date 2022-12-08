@@ -52,22 +52,28 @@ export default function App() {
     }
   }
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    closeAllPopups();
+  }
+
   return (
     <div className="body-container">
       <Header />
       <Main
-        onEditProfileClick={handleEditProfileClick}
-        onEditAvatarClick={handleEditAvatarClick}
-        onAddPlaceClick={handleAddPlaceClick}
-        onCardClick={handleCardClick}
-        onEraseCardClick={handleEraseCardClick}
-        onClose={closeAllPopups}
         popupAvatar={popupAvatar}
         popupEraseCard={popupEraseCard}
         popupAddNewPlace={popupAddNewPlace}
         popupProfile={popupProfile}
         popupPic={popupPic}
         imagePopup={selectedCard}
+        onEditProfileClick={handleEditProfileClick}
+        onEditAvatarClick={handleEditAvatarClick}
+        onAddPlaceClick={handleAddPlaceClick}
+        onCardClick={handleCardClick}
+        onEraseCardClick={handleEraseCardClick}
+        onClose={closeAllPopups}
+        onSubmit={handleSubmit}
       />
       <Footer />
     </div>

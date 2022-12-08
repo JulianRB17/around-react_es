@@ -6,18 +6,19 @@ import ImagePopup from "./ImagePopup";
 
 export default function Main(props) {
   const {
-    onEditAvatarClick,
-    onAddPlaceClick,
-    onEditProfileClick,
-    onEraseCardClick,
-    onCardClick,
-    onClose,
     popupAddNewPlace,
     popupAvatar,
     popupEraseCard,
     popupPic,
     popupProfile,
     imagePopup,
+    onEditAvatarClick,
+    onAddPlaceClick,
+    onEditProfileClick,
+    onEraseCardClick,
+    onCardClick,
+    onClose,
+    onSubmit,
   } = props;
 
   const [userName, setUserName] = React.useState("");
@@ -38,23 +39,24 @@ export default function Main(props) {
       .catch((err) => console.error(err));
   }, []);
 
-  const renderCards = function () {
-    return cards.map((card) => {
+  const renderCards = () =>
+    cards.map((card) => {
+      const { _id, owner, link, name, likes } = card;
+
       return (
         <Card
-          key={card._id}
-          cardId={card._id}
-          cardOwnerId={card.owner._id}
+          key={_id}
+          cardId={_id}
+          cardOwnerId={owner._id}
           userId={userId}
-          link={card.link}
-          cardName={card.name}
-          cardLikes={card.likes}
+          link={link}
+          cardName={name}
+          cardLikes={likes}
           onCardClick={() => onCardClick(card)}
           onEraseCardClick={onEraseCardClick}
         />
       );
     });
-  };
 
   return (
     <>
@@ -63,6 +65,7 @@ export default function Main(props) {
         submitText="Guardar"
         isOpen={popupAvatar}
         onClose={onClose}
+        onSubmit={onSubmit}
         inputs={[
           {
             type: "url",
@@ -77,6 +80,7 @@ export default function Main(props) {
         submitText="Guardar"
         isOpen={popupProfile}
         onClose={onClose}
+        onSubmit={onSubmit}
         inputs={[
           {
             type: "text",
@@ -101,6 +105,7 @@ export default function Main(props) {
         submitText="Guardar"
         isOpen={popupAddNewPlace}
         onClose={onClose}
+        onSubmit={onSubmit}
         inputs={[
           {
             type: "text",
@@ -124,6 +129,7 @@ export default function Main(props) {
         submitText="Sí"
         isOpen={popupEraseCard}
         onClose={onClose}
+        onSubmit={onSubmit}
         inputs={[]}
       />
 

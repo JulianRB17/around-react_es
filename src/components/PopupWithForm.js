@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function PopupWithForm(props) {
-  const { title, inputs, submitText, isOpen, onClose } = props;
+  const { title, inputs, submitText, isOpen, onClose, onSubmit } = props;
 
   const popupOpenClass = isOpen ? " popup_opened" : "";
   const popupBodySizeClass = inputs.length < 2 ? " popup__body_medium" : "";
@@ -39,7 +39,7 @@ export default function PopupWithForm(props) {
               );
             }
           )}
-          <button className="popup__save-btn" type="submit">
+          <button className="popup__save-btn" onClick={(e) => onSubmit(e)}>
             {submitText}
           </button>
         </form>

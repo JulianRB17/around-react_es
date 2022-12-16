@@ -14,7 +14,17 @@ export default function PopupWithForm(props) {
         <h2 className="popup__title">{title}</h2>
         <form className="popup__input-container">
           {inputs.map(
-            ({ type, placeholder, name, id, minLength, maxLength }) => {
+            ({
+              type,
+              placeholder,
+              name,
+              id,
+              minLength,
+              maxLength,
+              onChange,
+              value,
+              ref,
+            }) => {
               return (
                 <React.Fragment key={id}>
                   <input
@@ -25,16 +35,13 @@ export default function PopupWithForm(props) {
                     id={id}
                     minLength={minLength || null}
                     maxLength={maxLength || null}
+                    onChange={onChange ? (e) => onChange(e) : null}
+                    ref={ref || null}
+                    value={value || value === "" ? value : undefined}
                     required
                   />
-                  <div
-                    className="popup__input-underline"
-                    id="popup__input_profile-pic-underline"
-                  ></div>
-                  <span
-                    className="popup__error-msg"
-                    id="popup__input_profile-pic-error"
-                  ></span>
+                  <div className="popup__input-underline"></div>
+                  <span className="popup__error-msg"></span>
                 </React.Fragment>
               );
             }

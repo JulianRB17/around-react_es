@@ -29,7 +29,7 @@ class Api {
 
   toggleLikeBtn(id, isLiked) {
     this._specificUrl = `/cards/likes/${id} `;
-    this._options.method = isLiked ? "PUT" : "DELETE";
+    this._options.method = isLiked ? "DELETE" : "PUT";
     delete this._options.body;
     return this._fetchData();
   }
@@ -38,7 +38,7 @@ class Api {
     this._specificUrl = `/cards/${id} `;
     this._options.method = "DELETE";
     delete this._options.body;
-    return this._fetchData();
+    return this._fetchData().then(() => id);
   }
 
   setNewPlace(data) {

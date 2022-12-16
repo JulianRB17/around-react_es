@@ -4,4 +4,4 @@
 
 Primer acercamiento a la librería React de Javascript, se usaron también HTML y CSS. Compilación a través de Webpack y Babel usando Create React App.
 
-A futuro se desarrollará la implementación de generar más tarjetas, borrar las existentes y poder interactuar con el botón de like.
+A futuro se desarrollará la implementación de una validación para formularios, además agregar un popup de confirmación antes de eliminar una tarjeta.

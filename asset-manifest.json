@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/around-react_es/static/css/main.160f249f.css",
-    "main.js": "/around-react_es/static/js/main.c58ec0fc.js",
+    "main.css": "/around-react_es/static/css/main.6fa714e2.css",
+    "main.js": "/around-react_es/static/js/main.1433b2e3.js",
     "static/js/787.33e33395.chunk.js": "/around-react_es/static/js/787.33e33395.chunk.js",
     "static/media/Inter.var.woff2?v=3.19": "/around-react_es/static/media/Inter.var.c2fe3cb2b7c746f7966a.woff2",
     "static/media/Inter-italic.var.woff2?v=3.19": "/around-react_es/static/media/Inter-italic.var.30807be7abc48ba8c73c.woff2",
@@ -43,16 +43,16 @@
     "static/media/Inter-Thin.woff2?v=3.19": "/around-react_es/static/media/Inter-Thin.fff2a096db014f6239d4.woff2",
     "static/media/Inter-Regular.woff2?v=3.19": "/around-react_es/static/media/Inter-Regular.c8ba52b05a9ef10f4758.woff2",
     "static/media/profile-pic.png": "/around-react_es/static/media/profile-pic.727b5baa123f981bf5e0.png",
-    "static/media/logo.svg": "/around-react_es/static/media/logo.50fce9df697a07971411.svg",
+    "static/media/logo.svg": "/around-react_es/static/media/logo.50fce9df697a0797141191436383ff74.svg",
     "index.html": "/around-react_es/index.html",
     "static/media/Trash.svg": "/around-react_es/static/media/Trash.c4956c32989e66228de8.svg",
     "static/media/profile-ocverlay-profile-icon.svg": "/around-react_es/static/media/profile-ocverlay-profile-icon.ae1a976ddb506239e9f0.svg",
-    "main.160f249f.css.map": "/around-react_es/static/css/main.160f249f.css.map",
-    "main.c58ec0fc.js.map": "/around-react_es/static/js/main.c58ec0fc.js.map",
+    "main.6fa714e2.css.map": "/around-react_es/static/css/main.6fa714e2.css.map",
+    "main.1433b2e3.js.map": "/around-react_es/static/js/main.1433b2e3.js.map",
     "787.33e33395.chunk.js.map": "/around-react_es/static/js/787.33e33395.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.160f249f.css",
-    "static/js/main.c58ec0fc.js"
+    "static/css/main.6fa714e2.css",
+    "static/js/main.1433b2e3.js"
   ]
 }

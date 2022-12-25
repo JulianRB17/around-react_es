@@ -1,24 +1,24 @@
-import React from "react";
-import PopupWithForm from "./PopupWithForm";
+import React from 'react';
+import PopupWithForm from './PopupWithForm';
 
 export default function AddPlacePopup(props) {
-  const { isOpen, onClose, onAddPlaceSubmit } = props;
-  const [newPlace, setNewPlace] = React.useState("");
-  const [newPlaceCaption, setNewPlaceCaption] = React.useState("");
-
-  function handleNewPlaceCaptionChange(e) {
-    setNewPlaceCaption(e.target.value);
-  }
-
-  function handleNewPlaceChange(e) {
-    setNewPlace(e.target.value);
-  }
+  const {
+    isOpen,
+    onClose,
+    onAddPlaceSubmit,
+    onNewPlaceCaptionChange,
+    onNewPlaceChange,
+    newPlace,
+    newPlaceCaption,
+    setNewPlace,
+    setNewPlaceCaption,
+  } = props;
 
   function handleSubmit(e) {
     e.preventDefault();
     onAddPlaceSubmit({ newPlaceCaption, newPlace });
-    setNewPlace("");
-    setNewPlaceCaption("");
+    setNewPlace('');
+    setNewPlaceCaption('');
   }
 
   return (
@@ -30,21 +30,21 @@ export default function AddPlacePopup(props) {
       onSubmit={handleSubmit}
       inputs={[
         {
-          type: "text",
-          placeholder: "Título",
-          name: "newPlaceCaption",
-          id: "popup__input_new-place-title",
-          minLength: "2",
-          maxLength: "30",
-          onChange: handleNewPlaceCaptionChange,
+          type: 'text',
+          placeholder: 'Título',
+          name: 'newPlaceCaption',
+          id: 'popup__input_new-place-title',
+          minLength: '2',
+          maxLength: '30',
+          onChange: onNewPlaceCaptionChange,
           value: newPlaceCaption,
         },
         {
-          type: "url",
-          placeholder: "Enlace a la imagen",
-          name: "newPlace",
-          id: "popup__input_new-place-pic",
-          onChange: handleNewPlaceChange,
+          type: 'url',
+          placeholder: 'Enlace a la imagen',
+          name: 'newPlace',
+          id: 'popup__input_new-place-pic',
+          onChange: onNewPlaceChange,
           value: newPlace,
         },
       ]}

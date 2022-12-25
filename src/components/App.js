@@ -1,16 +1,16 @@
-import React from "react";
-import "../index.css";
-import Header from "./Header";
-import Main from "./Main";
-import Footer from "./Footer";
-import PopupWithForm from "./PopupWithForm";
-import ImagePopup from "./ImagePopup";
-import EditProfilePopup from "./EditProfilePopup.js";
-import api from "../utils/api";
-import Card from "./Card";
-import { CurrentUserContext } from "../contexts/CurrentUserContext";
-import EditAvatarPopup from "./EditAvatarPopup";
-import AddPlacePopup from "./AddPlacePopup";
+import React from 'react';
+import '../index.css';
+import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
+import PopupWithForm from './PopupWithForm';
+import ImagePopup from './ImagePopup';
+import EditProfilePopup from './EditProfilePopup.js';
+import api from '../utils/api';
+import Card from './Card';
+import { CurrentUserContext } from '../contexts/CurrentUserContext';
+import EditAvatarPopup from './EditAvatarPopup';
+import AddPlacePopup from './AddPlacePopup';
 
 export default function App() {
   const [isEditProfilePopupOpen, setEditProfilePopupOpen] =
@@ -20,9 +20,13 @@ export default function App() {
   const [isAddPlacePopupOpen, setAddPlacePopupOpen] = React.useState(false);
   const [popupEraseCard, setPopupEraseCard] = React.useState(false);
   const [popupPic, setPopupPic] = React.useState(false);
-  const [selectedCard, setSelectedCard] = React.useState("");
+  const [selectedCard, setSelectedCard] = React.useState('');
   const [currentUser, setCurrentUser] = React.useState({});
   const [cards, setCards] = React.useState([]);
+  const [newPlace, setNewPlace] = React.useState('');
+  const [newPlaceCaption, setNewPlaceCaption] = React.useState('');
+  const [userName, setUserName] = React.useState('');
+  const [userDescription, setUserDescription] = React.useState('');
 
   React.useEffect(() => {
     api
@@ -55,7 +59,7 @@ export default function App() {
     }
     if (popupPic) {
       setPopupPic(false);
-      setSelectedCard("");
+      setSelectedCard('');
     }
   }
 
@@ -117,10 +121,26 @@ export default function App() {
       .deleteCard(card._id)
       .then((deletedCardId) =>
         setCards((state) =>
-          state.filter((card) => (card._id === deletedCardId ? "" : card))
+          state.filter((card) => (card._id === deletedCardId ? '' : card))
         )
       )
       .catch((err) => console.error(err));
+  }
+
+  function handleNewPlaceCaptionChange(e) {
+    setNewPlaceCaption(e.target.value);
+  }
+
+  function handleNewPlaceChange(e) {
+    setNewPlace(e.target.value);
+  }
+
+  function handleUserNameChange(e) {
+    setUserName(e.target.value);
+  }
+
+  function handleUserDescriptionChange(e) {
+    setUserDescription(e.target.value);
   }
 
   const renderCards = () =>
@@ -155,12 +175,26 @@ export default function App() {
           isOpen={isEditProfilePopupOpen}
           onClose={closeAllPopups}
           onUpdateUser={handleUpdateUser}
+          onUserNameChange={handleUserNameChange}
+          onUserDescriptionChange={handleUserDescriptionChange}
+          setUserDescription={setUserDescription}
+          setUserName={setUserName}
+          name={userName}
+          about={userDescription}
         />
 
         <AddPlacePopup
           isOpen={isAddPlacePopupOpen}
           onClose={closeAllPopups}
           onAddPlaceSubmit={handleAddPlaceSubmit}
+          onNewPlaceCaptionChange={handleNewPlaceCaptionChange}
+          onNewPlaceChange={handleNewPlaceChange}
+          newPlace={newPlace}
+          newPlaceCaption={newPlaceCaption}
+          setNewPlace={setNewPlace}
+          setNewPlaceCaption={setNewPlaceCaption}
+          name={userName}
+          about={userDescription}
         />
 
         <PopupWithForm
